@@ -387,7 +387,7 @@ def parse_ollama_modelfile(model_text):
 
     # Parse base model
     base_model_match = re.search(
-        r"^FROM\s+(\w+)", model_text, re.MULTILINE | re.IGNORECASE
+        r"^FROM\s+(\S+)", model_text, re.MULTILINE | re.IGNORECASE
     )
     if base_model_match:
         data["base_model_id"] = base_model_match.group(1)
